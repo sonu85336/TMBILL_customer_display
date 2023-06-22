@@ -47,25 +47,22 @@ function CustomerPage(props) {
     });
   }, []);
 
-  console.log(tableData, "from customer page data");
-  console.log(props.ipadd)
-
+  
 /************************** */
 useEffect(()=>{
 QRCode.toDataURL(`${tableData?.billDetails?.field2?.toString()}` 
  
 ).then((res)=>{ 
   setQrSrc(res)
-  console.log(res,'from qrcode')
-  console.log('____-')
+  
+  
 })
 .catch((err)=>{
   console.log(err)
 })
 },[tableData])
 
- console.log(String(tableData?.billDetails?.field2)
-  ,'from bill etails')
+ 
 
   return (
     <div style={{ display: "flex" }}>
@@ -94,7 +91,14 @@ QRCode.toDataURL(`${tableData?.billDetails?.field2?.toString()}`
                   <td>{item.amount}</td>
                 </tr>
               </tbody>
-            ))}
+            ))}  
+
+
+           
+     
+  
+ 
+   
           </table>     
          
 </div>
@@ -107,7 +111,7 @@ QRCode.toDataURL(`${tableData?.billDetails?.field2?.toString()}`
           <div className={classes.pay}>
             <h6>SCAN TO PAY</h6>
             {tableData?.billDetails?.order_total&&<img src={qrsrc} alt="qr" />}     
-            
+             
           </div>
         </div>
       </div>
