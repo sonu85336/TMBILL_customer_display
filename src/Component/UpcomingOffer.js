@@ -81,9 +81,25 @@ function UpcomingOffer() {
     }
   }, []);
 
+
+/*logout confirmation */
+const logout = () => {
+  const confirm = window.confirm("are you sure?");
+  if(confirm){
+      history.push("/Loginpage" ) ;
+  }else {
+      // same as clicking a link 
+      // not optimal solution though
+      window.location.href = window.location.href;
+  }
+}
+
   console.log(localStorage.getItem("image1"), "form offer page ");
 
   return (
+    <div>
+
+   
     <div className={classes.main}>
       <div className={classes.offer}>
         <img src={UpcomeOffer} alt="offer" />
@@ -178,7 +194,10 @@ function UpcomingOffer() {
 
       {/* *************** */}
 
-      <div className="uploadicon">
+     
+    
+
+    <div className="uploadicon">
         <button
           className="btn btn-default btn-sm"
           onClick={() => setUploadFile(!uploadfile)}
@@ -188,10 +207,11 @@ function UpcomingOffer() {
 
         <button
           className="btn btn-default btn-sm"
-          onClick={() => history.push("/Loginpage")}
+          onClick={() =>  logout()} 
         >
           <LogoutIcon />
         </button>
+      </div>
       </div>
     </div>
   );
