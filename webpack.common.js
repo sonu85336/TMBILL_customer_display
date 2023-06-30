@@ -1,3 +1,4 @@
+ 
 const path = require('path');
 
 module.exports = {
@@ -57,4 +58,6 @@ module.exports = {
     filename: 'app.js',
     path: path.resolve(__dirname, 'build', 'js'),
   },
+ 
+ 
 };
