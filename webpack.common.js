@@ -1,3 +1,4 @@
+ 
 const path = require('path');
 
 module.exports = {
@@ -44,6 +45,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(mp3|wav)$/,
+        loader: 'file-loader'
+    }
     ]
   },
   resolve: {
@@ -53,4 +58,6 @@ module.exports = {
     filename: 'app.js',
     path: path.resolve(__dirname, 'build', 'js'),
   },
+ 
+ 
 };
